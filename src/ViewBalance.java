@@ -2,13 +2,13 @@
 public class ViewBalance {
     double balance; //Account total variable
 
-    public ViewBalance() { //Constructor
-        balance = 0;
+    public ViewBalance(double balance) { //Constructor
+        this.balance = balance; //this.balance refer to this class constructor variable
     }
 
     public double getBalance() {
         if (balance < 0){
-            System.out.println("Error: Balance is below 0"); //Error notification, then continue
+            System.out.println("Error: Balance is below 0. Balance: " + balance); //Error notification, then continue
             return balance;
         }
         return balance;
@@ -19,7 +19,7 @@ public class ViewBalance {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //May need to change or remove if balance is not an expected outcome
         return "ViewBalance{" +
                 "balance=" + balance +
                 '}';
