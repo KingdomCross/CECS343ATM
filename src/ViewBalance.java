@@ -7,6 +7,10 @@ public class ViewBalance {
     }
 
     public double getBalance() {
+        if (balance < 0){
+            System.out.println("Error: Balance is below 0"); //Error notification, then continue
+            return balance;
+        }
         return balance;
     }
 
