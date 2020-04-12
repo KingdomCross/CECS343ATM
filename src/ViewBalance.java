@@ -6,9 +6,12 @@ public class ViewBalance {
         balance = 0;
     }
 
-    public double getBalance(double n){
-        balance  = n;
+    public double getBalance() {
         return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     @Override
