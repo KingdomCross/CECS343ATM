@@ -2,7 +2,11 @@
 public abstract class User {
 
 	public double total;
-	public Cash cash;
+	public Cash[] cash; //should be array but in the class diagram it is a single instance
+
+    public User(Cash cash, double total){
+        
+    }
 	
 	public void makeSelection() {
 		//UML diagram has it as make_selection
