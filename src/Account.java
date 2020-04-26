@@ -26,9 +26,9 @@ public class Account {
         return; 
     }
 
-    public void checkBalance(){
+    public String checkBalance(){
         
-        return; 
+        return "The customers balance is $" + balance; 
     }
 
     
