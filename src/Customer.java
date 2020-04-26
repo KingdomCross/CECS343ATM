@@ -1,8 +1,10 @@
 
 public class Customer extends User {
 
-	public Customer() {
+	public Customer(Cash[] bill, double total) {
 		// TODO Auto-generated constructor stub
+        super(bill, total);
+
 	}
 
 }

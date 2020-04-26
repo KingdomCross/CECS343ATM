@@ -1,11 +1,14 @@
 
-public abstract class User {
+public class User {
 
 	public double total;
 	public Cash[] cash; //should be array but in the class diagram it is a single instance
 
-    public User(Cash cash, double total){
-        
+
+
+    public User(Cash[] cash, double total){
+        this.cash = cash;
+        this.total = total; 
     }
 	
 	public void makeSelection() {
