@@ -9,6 +9,13 @@ public class ATM {
     private CardScanner scanner;
     private Display display;
     private Dispencer dispenser;
+
+    public ATM(Account[] accounts, CardScanner cs, Display display, Dispencer dispencer){
+        this.account = accounts;
+        this.scanner = cs;
+        this.display = display;
+        this.dispenser = dispencer;
+    }
     
     
     public void insertCard(Card card, int pin) {
