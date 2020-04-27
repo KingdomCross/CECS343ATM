@@ -6,9 +6,4 @@ public class Customer extends User {
         super(bill, total);
 	}
 
-	public UserInput insertCard(){
-
-		return new UserInput();
-	}
-
 }

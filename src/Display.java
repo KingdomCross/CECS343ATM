@@ -25,7 +25,7 @@ public class Display {
 	}
 
 	public void welcome() {
-		ArrayList<String> welcomeSign = readText("welcome.txt");
+		ArrayList<String> welcomeSign = readText("src\\welcome.txt");
         for( int x = 0; x < welcomeSign.size(); x++){
             System.out.println(welcomeSign.get(x));
         }

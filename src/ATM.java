@@ -19,25 +19,29 @@ public class ATM {
     }
       
     
-    public boolean insertCard(Card card, int pin) {
+    public boolean insertCard(int pin) {
     	boolean valid = false;
     	valid = account[0].verifyPin(pin);     	    
     	return valid;
     }
-    
+
+    public void withdraw(){
+
+    }
+
+    public void transfer(){
+
+    }
     
     public void replenishCash() {
     	
     }
     
-    
+    public String checkBalance(){
+        return account[0].checkBalance();
+    }
+
     private void display(String message) {
     	
     }
-    
-    
-    private void sendCommand(String command) {
-    	
-    }
-        
 } 
