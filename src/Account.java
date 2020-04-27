@@ -24,15 +24,24 @@ public class Account {
 
     }
 
-    public void checkBalance(){
-        
+    public String checkBalance(){
+        return "The customers balance is $" + balance; 
 
     }
 
     public void addTransaction(){
-
+      
     }
 
-    
+	 
+    public int getCardNumber() {
+    	return card.getNum();
+    }
 
+	public boolean verifyPin(int pin) {
+		// TODO Auto-generated method stub
+		return card.verifyingPin(pin);
+	}
+
+    
 }
