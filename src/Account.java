@@ -31,6 +31,15 @@ public class Account {
         return "The customers balance is $" + balance; 
     }
 
-    
+	 
+    public int getCardNumber() {
+    	return card.getNum();
+    }
 
+	public boolean verifyPin(int pin) {
+		// TODO Auto-generated method stub
+		return card.verifyingPin(pin);
+	}
+
+    
 }

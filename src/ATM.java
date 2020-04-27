@@ -9,11 +9,17 @@ public class ATM {
     private CardScanner scanner;
     private Display display;
     private Dispencer dispenser;
+        
+    
+    public ATM() {
+    	display.welcome();
+    }
     
     
-    public void insertCard(Card card, int pin) {
-    	//possibly be a boolean?
-    
+    public boolean insertCard(Card card, int pin) {
+    	boolean valid = false;
+    	valid = account[0].verifyPin(pin);     	    
+    	return valid;
     }
     
     
