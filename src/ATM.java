@@ -15,9 +15,15 @@ public class ATM {
         this.scanner = cs;
         this.display = display;
         this.dispenser = dispencer;
-        display.welcome();
     }
-      
+
+    public void welcome(){
+        this.display.welcome();
+    }
+
+    public void invalidPin(){
+        this.display.invalidPin();
+    }
     
     public boolean insertCard(int pin) {
     	boolean valid = false;
@@ -25,23 +31,36 @@ public class ATM {
     	return valid;
     }
 
-    public void withdraw(){
-
+    public void withdraw(int amount, int account){
+        this.account[account].withdraw(amount);
     }
 
-    public void transfer(){
+    public void transfer(int account, int amount){
+        if(account == 0){
+            System.out.println("Checkings:");
+        }
+        else {
+            System.out.println("Savings");
+        }
+        boolean successful = this.account[account].withdraw(amount);
+        if(account == 0) {
+            System.out.println("Savings:");
+            this.account[1].deposit(amount);
+        }
+        else {
+            System.out.println("Checkings:");
+            this.account[0].deposit(amount);
+        }
+        if(successful) {
+            System.out.println("Successfully transferred " + amount);
+        }
+    }
 
+    public void deposit(int amount, int account){
+        this.account[account].deposit(amount);
     }
     
-    public void replenishCash() {
-    	
-    }
-    
-    public String checkBalance(){
-        return account[0].checkBalance();
-    }
-
-    private void display(String message) {
-    	
+    public String checkBalance(int index){
+        return account[index].checkBalance();
     }
 } 

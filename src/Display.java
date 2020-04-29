@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Display {
 	
 	
@@ -11,6 +10,12 @@ public class Display {
 	public void displayMainMenu() {
 		
 	}
+
+	public void invalidPin(){
+        System.out.println("PIN Invalid");
+        System.out.println("[0] Try again");
+        System.out.println("[1] Exit");
+    }
 	
 	public void displayWithdrawMenu() {
 		

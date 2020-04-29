@@ -6,7 +6,6 @@ public class Runner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
 		Random rand = new Random();
 		Cash[] cash = {Cash.One};
 		Customer denil = new Customer(cash, 1);
@@ -16,11 +15,8 @@ public class Runner {
 		Account[] accounts = {checking, saving};
 		ATM atm = new ATM(accounts, new CardScanner(), new Display(), new Dispencer());
 		UserInput ui = new UserInput(denil, atm);
-		System.out.println("Enter here:");
-		int decision = sc.nextInt();
-		ui.decision(decision);
+		ui.decision();
 		System.out.println("Thank you for choosing Rona ATM");
-		sc.close();
 	}
 }
 

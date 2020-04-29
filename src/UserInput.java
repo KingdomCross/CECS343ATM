@@ -9,36 +9,103 @@ public class UserInput {
         this.atm = atm;
     }
 
-    public void decision(int dec){
-        switch (dec){
-            case 0:
-                Scanner sc = new Scanner(System.in);
-                System.out.println("You choose 0");
-                System.out.println("Enter pin: ");
-                int pin = sc.nextInt();
-                if(this.atm.insertCard(pin)){
-                    this.options();
-                }
-                break;
-            case 1:
-                System.out.println("You choose 1");
+    public void decision(){
+        boolean exit = false;
+        Scanner sc = new Scanner(System.in);
+        while(!exit) {
+            atm.welcome();
+            int dec = sc.nextInt();
+            switch (dec) {
+                case 0:
+                    System.out.println("Card inserted");
+                    boolean exit1 = false;
+                    boolean pinOK = false;
+                    while(!exit1) {
+                        System.out.println("Enter pin:");
+                        int pin = sc.nextInt();
+                        if (this.atm.insertCard(pin)) {
+                            exit1 = true;
+                            pinOK = true;
+                        } else {
+                            this.atm.invalidPin();
+                            switch (sc.nextInt()){
+                                case 0:
+                                    break;
+                                case 1:
+                                    exit1 = true;
+                                    exit = true;
+                            }
+                        }
+                    }
+                    if(pinOK) {
+                        exit = this.options();
+                    }
+                    break;
+                case 1:
+                    exit = true;
+                default:
+                    System.out.println("Invalid Input");
+            }
         }
+        sc.close();
     }
 
-    public void options(){
-        System.out.println("[0] Withdraw Money");
-        System.out.println("[1] Transfer Money");
-        System.out.println("[2] Check Balance");
-        System.out.println("[3] Exit");
-        Scanner sc = new Scanner(System.in);
-        int decision = sc.nextInt();
-        switch (decision){
-            case 0:
-//                atm.withdraw();
-            case 1:
-//                atm.transfer();
-            case 2:
-                System.out.println(atm.checkBalance());
+    public boolean options(){
+        boolean cond = true;
+        while(cond){
+            System.out.println("[0] Withdraw Money");
+            System.out.println("[1] Transfer Money");
+            System.out.println("[2] Check Balance");
+            System.out.println("[3] Deposit Money");
+            System.out.println("[4] Exit");
+            Scanner sc = new Scanner(System.in);
+            int account;
+            int amount;
+            int decision = sc.nextInt();
+            switch (decision) {
+                case 0:
+                    System.out.println("");
+                    System.out.println("Where would you like to withdraw from?");
+                    System.out.println("[0] Checkings");
+                    System.out.println("[1] Savings");
+                    account = sc.nextInt();
+                    System.out.println("Enter amount to withdraw:");
+                    amount = sc.nextInt();
+                    atm.withdraw(amount, account);
+                    break;
+
+                case 1:
+                    System.out.println("Where would you like to transfer from?");
+                    System.out.println("[0] Checkings");
+                    System.out.println("[1] Savings");
+                    account = sc.nextInt();
+                    System.out.println("Enter amount to transfer:");
+                    amount = sc.nextInt();
+                    atm.transfer(account, amount);
+
+                case 2:
+                    System.out.println("------------------------------------------------");
+                    System.out.println("What account balance would you like to see?");
+                    System.out.println("[0] Checkings");
+                    System.out.println("[1] Savings");
+                    int acIndex = sc.nextInt();
+                    System.out.println(atm.checkBalance(acIndex));
+                    break;
+                case 3:
+                    System.out.println("What account would you like to deposit to?");
+                    System.out.println("[0] Checkings");
+                    System.out.println("[1] Savings");
+                    account = sc.nextInt();
+                    System.out.println("How much would you like to deposit?");
+                    amount = sc.nextInt();
+                    atm.deposit(amount, account);
+                    break;
+                case 4:
+                    cond = false;
+                default:
+                    System.out.println("Invalid Input");
+            }
         }
+        return true;
     }
 }
