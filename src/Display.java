@@ -30,7 +30,8 @@ public class Display {
                 list.add(temp);
             }
         } catch (FileNotFoundException fnf) {
-            System.out.println(fnf.getStackTrace());
+            System.out.println("[0] Insert Card");
+            System.out.println("[1] Exit");
         }
         return list;
     }

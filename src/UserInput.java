@@ -41,6 +41,7 @@ public class UserInput {
                     break;
                 case 1:
                     exit = true;
+                    break;
                 default:
                     System.out.println("Invalid Input");
             }
