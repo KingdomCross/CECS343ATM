@@ -82,7 +82,7 @@ public class UserInput {
                     System.out.println("Enter amount to transfer:");
                     amount = sc.nextInt();
                     atm.transfer(account, amount);
-
+                    break;
                 case 2:
                     System.out.println("------------------------------------------------");
                     System.out.println("What account balance would you like to see?");
@@ -102,6 +102,7 @@ public class UserInput {
                     break;
                 case 4:
                     cond = false;
+                    break;
                 default:
                     System.out.println("Invalid Input");
             }
