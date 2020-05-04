@@ -1,11 +1,9 @@
 import java.util.Scanner;
 
 public class UserInput {
-    public User user;
     public ATM atm;
 
-    public UserInput(User user, ATM atm){
-        this.user = user;
+    public UserInput(ATM atm){
         this.atm = atm;
     }
 

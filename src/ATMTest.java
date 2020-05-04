@@ -23,7 +23,7 @@ public final class ATMTest {
         Account checking = new Account(1000, card, rand.nextInt((int) Math.pow(10,10)));
         Account saving = new Account(100000, null, rand.nextInt((int) Math.pow(10,10)));
         Account[] accounts = {checking, saving};
-        return new ATM(accounts, new CardScanner(), new Display(), new Dispencer());
+        return new ATM(accounts, new Display());
     }
 
 

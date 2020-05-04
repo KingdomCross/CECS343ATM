@@ -6,15 +6,12 @@ public class ATM {
     public Card card; 
     public UserInput input; //User input shouldn't be a instance variable remove later
     public Account[] account;
-    private CardScanner scanner;
     private Display display;
-    private Dispencer dispenser;
+
   
-    public ATM(Account[] accounts, CardScanner cs, Display display, Dispencer dispencer){
+    public ATM(Account[] accounts, Display display){
         this.account = accounts;
-        this.scanner = cs;
         this.display = display;
-        this.dispenser = dispencer;
     }
 
     public void welcome(){

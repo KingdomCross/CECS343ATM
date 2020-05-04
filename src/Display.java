@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Display {
-	
-	
-		
-	public void displayMainMenu() {
-		
-	}
+
 
 	public void invalidPin(){
         System.out.println("PIN Invalid");
@@ -17,17 +12,7 @@ public class Display {
         System.out.println("[1] Exit");
     }
 	
-	public void displayWithdrawMenu() {
-		
-	}
-	
-	public void transferMenu() {
-		
-	}
-	
-	public void depositMenu() {
-		
-	}
+
 
 	public void welcome() {
 		ArrayList<String> welcomeSign = readText("src\\welcome.txt");
