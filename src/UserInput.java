@@ -62,7 +62,7 @@ public class UserInput {
             int decision = sc.nextInt();
             switch (decision) {
                 case 0:
-                    System.out.println("");
+                	System.out.println("------------------------------------------------");
                     System.out.println("Where would you like to withdraw from?");
                     System.out.println("[0] Checkings");
                     System.out.println("[1] Savings");
@@ -73,6 +73,7 @@ public class UserInput {
                     break;
 
                 case 1:
+                	 System.out.println("------------------------------------------------");
                     System.out.println("Where would you like to transfer from?");
                     System.out.println("[0] Checkings");
                     System.out.println("[1] Savings");
@@ -90,6 +91,7 @@ public class UserInput {
                     System.out.println(atm.checkBalance(acIndex));
                     break;
                 case 3:
+                	System.out.println("------------------------------------------------");
                     System.out.println("What account would you like to deposit to?");
                     System.out.println("[0] Checkings");
                     System.out.println("[1] Savings");

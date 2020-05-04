@@ -40,9 +40,6 @@ public class Account {
     }
 
 	public boolean verifyPin(int pin) {
-		// TODO Auto-generated method stub
 		return card.verifyingPin(pin);
 	}
-
-    
 }

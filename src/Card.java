@@ -38,6 +38,4 @@ public class Card{
     public Boolean verifyingPin(int pin){
         return this.pin == pin;
     }
-
-  
 }

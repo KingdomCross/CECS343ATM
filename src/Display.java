@@ -34,6 +34,4 @@ public class Display {
         }
         return list;
     }
-	
-
 }
