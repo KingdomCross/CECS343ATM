@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Display {
-
-
 	public void invalidPin(){
         System.out.println("PIN Invalid");
         System.out.println("[0] Try again");

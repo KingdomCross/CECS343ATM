@@ -3,8 +3,6 @@
 //Alex Chheng
 //Erick Leyva
 public class ATM {
-    public Card card; 
-    public UserInput input; //User input shouldn't be a instance variable remove later
     public Account[] account;
     private Display display;
 
